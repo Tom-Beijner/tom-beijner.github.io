@@ -1,0 +1,476 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ececec;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Global */
+.content {
+    padding: 0 20px;
+}
+
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    transform: translate3d(0, -50%, 0) !important;
+}
+
+[data-aos=fade-up] {
+    transform: translate3d(0, -35%, 0) !important;
+}
+
+/* Navbar */
+.navigation {
+    height: 70px;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+@media only screen and (max-width: 798px) {
+    .navigation {
+        background: #262626;
+    }
+}
+
+.navigation.active {
+    background: #262626;
+    color: #fff;
+}
+
+.brand {
+    position: absolute;
+    padding-left: 20px;
+    float: left;
+    line-height: 70px;
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+
+.brand a,
+.brand a:visited {
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.brand a:hover,
+.brand a:visited:hover {
+    color: #1B98E0;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav {
+    float: right;
+    z-index: 1;
+    position: relative;
+
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: left;
+    position: relative;
+}
+
+nav ul li a,
+nav ul li a:visited {
+    display: block;
+    padding: 0 20px;
+    line-height: 70px;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:visited:hover {
+    background: #2d48b2;
+    color: #ffffff;
+}
+
+
+
+nav ul li a:not(:only-child):after,
+nav ul li a:visited:not(:only-child):after {
+    padding-left: 4px;
+    content: " â–¾";
+}
+
+nav ul li ul li {
+    min-width: 190px;
+}
+
+nav ul li ul li a {
+    padding: 15px;
+    line-height: 20px;
+}
+
+.nav-dropdown {
+    position: absolute;
+    display: none;
+    z-index: 1;
+    transition: .5s;
+}
+
+.nav-dropdown.active {
+    background: #262626;
+}
+
+/* Mobile navigation */
+.nav-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #262626;
+    height: 70px;
+    width: 70px;
+}
+
+@media only screen and (max-width: 798px) {
+    .nav-mobile {
+        display: block;
+        background: #262626;
+    }
+
+    nav {
+        width: 100%;
+        padding: 69px 0 15px;
+    }
+
+    nav ul {
+        display: none;
+        background: #262626;
+    }
+
+    nav ul li {
+        float: none;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        line-height: 20px;
+    }
+
+    nav ul li ul li a {
+        padding-left: 30px;
+    }
+
+    .nav-dropdown {
+        position: static;
+    }
+}
+
+@media screen and (min-width: 799px) {
+    .nav-list {
+        display: block !important;
+    }
+}
+
+#nav-toggle {
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: #ffffff;
+    position: absolute;
+    display: block;
+    content: "";
+    transition: all 300ms ease-in-out;
+}
+
+#nav-toggle span:before {
+    top: -10px;
+}
+
+#nav-toggle span:after {
+    bottom: -10px;
+}
+
+#nav-toggle.active span {
+    background-color: transparent;
+}
+
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+    top: 0;
+}
+
+#nav-toggle.active span:before {
+    transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+    transform: rotate(-45deg);
+}
+
+
+
+/* END - Navbar */
+/* Header */
+header {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+/* Banner */
+.banner {
+    height: 100vh;
+    padding: 0 20px;
+}
+
+#video-background {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+}
+
+.banner-text {
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 30px;
+}
+
+.banner-text .button {
+    float: right;
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.banner-text .button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: #2d48b2;
+}
+
+/* END - Banner */
+
+/* Section - Rows */
+
+.row {
+    height: 100vh;
+}
+
+.row-column {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 15px;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.row-column-content {
+    height: 200px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+}
+
+@media only screen and (max-width: 1014px) {
+    .row-column {
+        width: 100%;
+        top: 0;
+        padding-left: 15px!important;
+        padding-right: 15px!important;
+    }
+}
+
+/* Section - Join us */
+#join {
+    background-color: #1d1d45;
+}
+
+.discord {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.discord img {
+    width: 100px;
+    vertical-align: middle;
+}
+
+.discord h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.discord .links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.discord .button {
+    float: left;
+    color: white;
+    background-color: #1a2a60;
+    text-decoration: none;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.discord .button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: #2d48b2;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+}
+
+#discord-widget .widget-btn-connect {
+    display: none !important;
+}
+
+/* Footer */
+footer {
+    height: 300px;
+}
+
+.backtop {
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: #1a2a60;
+}
+
+.backtop-button {
+    position: relative;
+    display: block;
+    text-align: center;
+    height: 100%;
+    line-height: 300px;
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.backtop-button:hover {
+    background-color: #2d48b2;
+}
+
+.footer-info {
+    float: left;
+    width: 80%;
+    height: 300px;
+    background-color: white;
+}
+
+.footer-info-brand {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-info-links a {
+    position: relative;
+    display: table;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #1a2a60;
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.footer-info-links a:hover {
+    color: #2d48b2;
+}
+
+.footer-info-extra {
+    margin-top: 150px;
+}
+
+.footer-info-extra p {
+    margin: 0;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    float: left;
+    width: 50%;
+    white-space: nowrap;
+}
+
+.footer-info-extra a {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    float: left;
+    width: 50%;
+    text-align: right;
+}
